@@ -1,8 +1,16 @@
 
-formation-tp-vol/.project
+formation-tp-vol-model/.project
 
-formation-tp-vol/.classpath
+formation-tp-vol-model/.classpath
 
-formation-tp-vol/.settings/
+formation-tp-vol-model/.settings/
 
-formation-tp-vol/target/
+formation-tp-vol-model/target/
+
+formation-tp-vol-persistence/.project
+
+formation-tp-vol-persistence/.classpath
+
+formation-tp-vol-persistence/.settings/
+
+formation-tp-vol-persistence/target/
