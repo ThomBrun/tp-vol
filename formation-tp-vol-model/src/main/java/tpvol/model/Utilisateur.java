@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -21,6 +22,7 @@ public class Utilisateur {
 	@Column(name="mdp", length = 100, nullable = false)
 	private String motDePasse;
 	
+	@OneToOne(mappedBy="utilisateur")
 	private Client client;
 	
 	//generator
