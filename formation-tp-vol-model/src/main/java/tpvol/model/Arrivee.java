@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -20,7 +21,8 @@ public class Arrivee {
 	@ManyToOne
 	@JoinColumn(name="aeroport_id")
 	private Aeroport aeroport;
-	private Vol vol;
+	@OneToOne
+	private Vol vols;
 	
 	public Arrivee() {
 		super();
@@ -38,11 +40,11 @@ public class Arrivee {
 	public void setAeroprt(Aeroport aeroprt) {
 		this.aeroport = aeroprt;
 	}
-	public Vol getVol() {
-		return vol;
+	public Vol getVols() {
+		return vols;
 	}
-	public void setVol(Vol vol) {
-		this.vol = vol;
+	public void setVols(Vol vols) {
+		this.vols = vols;
 	}
 	@Override
 	public String toString() {

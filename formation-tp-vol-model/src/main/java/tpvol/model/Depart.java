@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,6 +19,8 @@ public class Depart {
 	private Long id;
 	@Temporal(TemporalType.DATE)
 	private Date dateDepart;
+	
+	@OneToOne
 	private Vol vols;
 	@ManyToOne
 	@JoinColumn(name="aeroport_id")
