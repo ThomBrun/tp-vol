@@ -1,11 +1,13 @@
 package tpvol.model;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class Aeroport {
 	
 	private String nom;
-	private ArrayList<Ville> villes = new ArrayList<Ville>();
+	private List<Ville> villes = new ArrayList<Ville>();
 	
 	public Aeroport() {
 		super();
@@ -20,11 +22,11 @@ public class Aeroport {
 		this.nom = nom;
 	}
 
-	public ArrayList<Ville> getVilles() {
+	public List<Ville> getVilles() {
 		return villes;
 	}
 
-	public void setVilles(ArrayList<Ville> villes) {
+	public void setVilles(List<Ville> villes) {
 		this.villes = villes;
 	}
 	

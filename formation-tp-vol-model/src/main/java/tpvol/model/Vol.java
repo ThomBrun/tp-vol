@@ -1,13 +1,14 @@
 package tpvol.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Vol {
 
 	private String numeroDeVol;
 	private Boolean ouvert;
-	private ArrayList<Trajet> trajets = new ArrayList<Trajet>();
+	private List<Trajet> trajets = new ArrayList<Trajet>();
 	private Compagnie compagnie;
 	private Avion avion;
 	private Arrivee arrivee;
@@ -35,11 +36,11 @@ public class Vol {
 		this.ouvert = ouvert;
 	}
 
-	public ArrayList<Trajet> getTrajets() {
+	public List<Trajet> getTrajets() {
 		return trajets;
 	}
 
-	public void setTrajets(ArrayList<Trajet> trajets) {
+	public void setTrajets(List<Trajet> trajets) {
 		this.trajets = trajets;
 	}
 
