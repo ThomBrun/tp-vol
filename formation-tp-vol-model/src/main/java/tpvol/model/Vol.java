@@ -27,7 +27,7 @@ public class Vol {
 	@JoinColumn(name="avion_id")
 	private Avion avion;
 	@OneToOne
-	@JoinColumn(name = "dt_depart_id")
+	@JoinColumn(name = "dt_arrivee_id")
 	private Arrivee arrivee;
 	@OneToOne
 	@JoinColumn(name = "dt_depart_id")
