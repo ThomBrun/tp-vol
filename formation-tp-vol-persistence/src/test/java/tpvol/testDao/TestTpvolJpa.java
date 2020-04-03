@@ -13,6 +13,7 @@ import tpvol.model.Paiement;
 import tpvol.model.Particulier;
 import tpvol.model.Passager;
 import tpvol.model.Reservation;
+import tpvol.model.Societe;
 import tpvol.model.Trajet;
 import tpvol.model.Utilisateur;
 import tpvol.model.Ville;
@@ -120,6 +121,7 @@ public class TestTpvolJpa {
 		Reservation reservation = new Reservation();
 		reservation.setNumeroDeReservation("s51d6s1zer");
 		
+		
 		reservation = reservationDao.save(reservation);
 		
 		reservation.setTraj(trajet1);
@@ -137,6 +139,7 @@ public class TestTpvolJpa {
 		cb = paiementDao.save(cb);
 		
 		reservation.setPaiement(cb);
+		
 		reservation = reservationDao.save(reservation);
 		
 		Passager georgesPassager = new Passager("BUSH", "Georges", new Date(), "Française", "M", "25481818", new Date(), "Passeport");
@@ -155,10 +158,45 @@ public class TestTpvolJpa {
 		
 		utilisateur = utilisateurDao.save(utilisateur);
 		georges.setUtilisateur(utilisateur);
+		utilisateur.setClient(georges);
 		
-		
+		utilisateur = utilisateurDao.save(utilisateur);
 		georges = particulierDao.save(georges);
-				
+		
+		Paiement paiement = new Paiement("carte", 52F);
+		paiement = paiementDao.save(paiement);
+		
+		Reservation reservation2 = new Reservation(false, true, true, "6354f6435f");
+		reservation2 = reservationDao.save(reservation2);
+		
+		Passager toto = new Passager("Toto", "aaaa", new Date(), "française","M","6843d5s35d4s1",new Date(),"passeport");
+		toto = passageDao.save(toto);
+		
+		reservation2.setPaiement(paiement);
+		reservation2.setPassager(toto);
+		reservation2 = reservationDao.save(reservation2);
+		
+		Societe AJC = new Societe("35d12cx54","6843512");
+		AJC.setNom("AJC");
+		AJC.setMail("ajc@gmail.fr");
+		AJC.setTelephone("0564321579");
+		AJC.setNumeroAdresse(13);
+		AJC.setCodePostal(33700);
+		AJC.setRue("Avenue JFK");
+		AJC.setVille("Merignac");
+		AJC.setComplementAdresse("1er étage");
+		AJC.setPays("FRANCE");
+		
+		AJC = societeDao.save(AJC);
+		
+		Utilisateur util = new Utilisateur("qjgzhbn","123456789");
+		util = utilisateurDao.save(util);
+			
+		util.setClient(AJC);
+		AJC.setUtilisateur(util);
+		
+		util = utilisateurDao.save(util);	
+		AJC = societeDao.save(AJC);
 
 	}
 
