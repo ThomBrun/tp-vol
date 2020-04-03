@@ -1,8 +1,27 @@
 package tpvol.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity // obligatoire
+@Table(name = "utilisateur") // optionnel 
 public class Utilisateur {
+	
+	@Id // obligatoire
+	@GeneratedValue // optionnel
+	private Long id;
+	
+	@Column(name="identifiant", length = 100, nullable = false)
 	private String identifiant;
+	
+	@Column(name="mdp", length = 100, nullable = false)
 	private String motDePasse;
+	
 	private Client client;
 	
 	//generator
@@ -14,6 +33,17 @@ public class Utilisateur {
 		super();
 		this.identifiant = identifiant;
 		this.motDePasse = motDePasse;
+	}
+	
+	@Version
+    private Long version;
+	
+    public Long getVersion() {
+		return version;
+	}
+    
+	public void setVersion(Long version) {
+		this.version = version;
 	}
 
 	//getters and setters

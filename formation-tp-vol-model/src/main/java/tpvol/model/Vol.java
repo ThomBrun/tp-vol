@@ -1,16 +1,36 @@
 package tpvol.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
+@Entity
 public class Vol {
-
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String numeroDeVol;
 	private Boolean ouvert;
-	private ArrayList<Trajet> trajets = new ArrayList<Trajet>();
+	@ManyToMany(mappedBy = "lien_trajet_vol")
+	private List<Trajet> trajets = new ArrayList<Trajet>();
+	@ManyToOne
+	@JoinColumn(name="compagnie_id")
 	private Compagnie compagnie;
+	@ManyToOne
+	@JoinColumn(name="avion_id")
 	private Avion avion;
+	@OneToOne
+	@JoinColumn(name = "dt_arrivee_id")
 	private Arrivee arrivee;
+	@OneToOne
+	@JoinColumn(name = "dt_depart_id")
 	private Depart depart;
 
 	
@@ -35,11 +55,11 @@ public class Vol {
 		this.ouvert = ouvert;
 	}
 
-	public ArrayList<Trajet> getTrajets() {
+	public List<Trajet> getTrajets() {
 		return trajets;
 	}
 
-	public void setTrajets(ArrayList<Trajet> trajets) {
+	public void setTrajets(List<Trajet> trajets) {
 		this.trajets = trajets;
 	}
 

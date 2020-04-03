@@ -1,12 +1,22 @@
 package tpvol.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Compagnie {
-
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String nom;
-	private ArrayList<Vol> vols = new ArrayList<Vol>();
-
+	@OneToMany(mappedBy = "vol")
+	private List<Vol> vols	 = new ArrayList<Vol>();
+	
 	public Compagnie() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -25,11 +35,15 @@ public class Compagnie {
 		this.nom = nom;
 	}
 
-	public ArrayList<Vol> getVols() {
+
+
+	public List<Vol> getVols() {
 		return vols;
 	}
 
-	public void setVols(ArrayList<Vol> vols) {
+
+
+	public void setVols(List<Vol> vols) {
 		this.vols = vols;
 	}
 

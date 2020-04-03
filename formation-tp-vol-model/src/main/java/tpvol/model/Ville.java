@@ -1,17 +1,31 @@
 package tpvol.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+@Entity
 public class Ville {
-	
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String nom;
 	private String pays;
-	private ArrayList<Aeroport> aeroports = new ArrayList<Aeroport>();
+	@ManyToMany(mappedBy = "link_aeroport_ville")
+	private List<Aeroport> aeroports = new ArrayList<Aeroport>();
 	
 	public Ville() {
 		super();
 	}
 
+	
+	
 	public String getNom() {
 		return nom;
 	}
@@ -28,11 +42,11 @@ public class Ville {
 		this.pays = pays;
 	}
 
-	public ArrayList<Aeroport> getAeroports() {
+	public List<Aeroport> getAeroports() {
 		return aeroports;
 	}
 
-	public void setAeroports(ArrayList<Aeroport> aeroports) {
+	public void setAeroports(List<Aeroport> aeroports) {
 		this.aeroports = aeroports;
 	}
 	

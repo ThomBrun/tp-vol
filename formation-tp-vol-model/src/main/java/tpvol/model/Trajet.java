@@ -29,14 +29,12 @@ public class Trajet {
 		super();
 	}
 
-	// Getters and setters
-
-	public Long getId() {
-		return id;
+	public ArrayList<Vol> getVolsOrdonne() {
+		return volsOrdonne;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setVolsOrdonne(ArrayList<Vol> volsOrdonne) {
+		this.volsOrdonne = volsOrdonne;
 	}
 
 	public List<Vol> getvols() {
