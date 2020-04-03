@@ -1,7 +1,18 @@
 package tpvol.model;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Version;
+
+@Entity // obligatoire
+@DiscriminatorValue("soc")
 public class Societe extends Client{
+	
+	@Column(name="siret", length = 100, nullable = false)
 	private String siret;
+	
+	@Column(name="TVA", length = 100, nullable = false)
 	private String numeroDeTva;
 	
 	//Generator
@@ -10,6 +21,23 @@ public class Societe extends Client{
 		super();
 	}
 	
+	public Societe(String siret, String tva) {
+		super();
+		this.siret = siret;
+		this.numeroDeTva = tva;
+	}
+	
+	@Version
+    private Long version;
+	
+    public Long getVersion() {
+		return version;
+	}
+
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+
 	//Getters and setters
 		
 	public String getSiret() {
