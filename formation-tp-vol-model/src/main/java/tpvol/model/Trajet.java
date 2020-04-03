@@ -1,28 +1,54 @@
 package tpvol.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Trajet {
-	
-	private ArrayList<Vol> volsOrdonne = new ArrayList<Vol>();
+	@Id
+	@GeneratedValue
+	private Long id;
+	@ManyToMany
+	@JoinTable(name="lien_trajet_vol", joinColumns = @JoinColumn(name="trajet_id"), inverseJoinColumns = @JoinColumn(name="vol_id"))
+	private List<Vol> vols = new ArrayList<Vol>();
+
+	@OneToOne(mappedBy = "trajet")
 	private Reservation res;
-	
+
+	// generator
+
 	public Trajet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<Vol> getVolsOrdonne() {
-		return volsOrdonne;
+	// Getters and setters
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setVolsOrdonne(ArrayList<Vol> volsOrdonne) {
-		this.volsOrdonne = volsOrdonne;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	
-	public void AddVol(Vol volsOrdonne) {
-		this.volsOrdonne.add(volsOrdonne);
+	public List<Vol> getvols() {
+		return vols;
+	}
+
+	public void setVols(List<Vol> vols) {
+		this.vols = vols;
+	}
+
+	public void AddVol(Vol vols) {
+		this.vols.add(vols);
 	}
 
 	public Reservation getRes() {
@@ -35,11 +61,7 @@ public class Trajet {
 
 	@Override
 	public String toString() {
-		return "Trajet [volsOrdonne=" + volsOrdonne + ", res=" + res + "]";
+		return "Trajet [volsOrdonne=" + vols + ", res=" + res + "]";
 	}
-
-
-	
-	
 
 }
