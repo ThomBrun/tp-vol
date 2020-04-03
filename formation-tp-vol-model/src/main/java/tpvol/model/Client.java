@@ -56,7 +56,7 @@ public abstract class Client {
 	@Column(name="pays", length = 50)
 	private String pays;
 	
-	@OneToOne(mappedBy="client")
+	@OneToOne
 	private Utilisateur utilisateur;
 	
 	@OneToMany(mappedBy="client")
