@@ -22,7 +22,7 @@ public class Utilisateur {
 	@Column(name="mdp", length = 100, nullable = false)
 	private String motDePasse;
 	
-	@OneToOne(mappedBy="utilisateur")
+	@OneToOne
 	private Client client;
 	
 	//generator

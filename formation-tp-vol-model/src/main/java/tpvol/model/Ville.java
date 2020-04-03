@@ -6,8 +6,6 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -17,9 +15,9 @@ public class Ville {
 	private Long id;
 	private String nom;
 	private String pays;
-	@ManyToMany(mappedBy = "link_aeroport_ville")
+	@ManyToMany(mappedBy = "villes")
 	private List<Aeroport> aeroports = new ArrayList<Aeroport>();
-	
+
 	public Ville() {
 		super();
 	}
@@ -54,11 +52,9 @@ public class Ville {
 	public void setAeroports(List<Aeroport> aeroports) {
 		this.aeroports = aeroports;
 	}
-	
+
 	public void addAeroport(Aeroport aeroports) {
 		this.aeroports.add(aeroports);
 	}
-	
-	
 
 }

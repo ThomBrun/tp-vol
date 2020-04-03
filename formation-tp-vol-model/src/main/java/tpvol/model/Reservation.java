@@ -25,8 +25,8 @@ public class Reservation {
 	@OneToOne
 	@JoinColumn(name="paiement_id")
 	private Paiement paiement;
+	
 	@OneToOne
-	@JoinColumn(name = "trajet_id")
 	private Trajet traj;
 
 	// generator
