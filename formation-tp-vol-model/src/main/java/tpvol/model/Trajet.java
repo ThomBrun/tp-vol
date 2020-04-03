@@ -1,10 +1,11 @@
 package tpvol.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Trajet {
 	
-	private ArrayList<Vol> volsOrdonne = new ArrayList<Vol>();
+	private List<Vol> volsOrdonne = new ArrayList<Vol>();
 	private Reservation res;
 	
 	public Trajet() {
@@ -12,11 +13,11 @@ public class Trajet {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<Vol> getVolsOrdonne() {
+	public List<Vol> getVolsOrdonne() {
 		return volsOrdonne;
 	}
 
-	public void setVolsOrdonne(ArrayList<Vol> volsOrdonne) {
+	public void setVolsOrdonne(List<Vol> volsOrdonne) {
 		this.volsOrdonne = volsOrdonne;
 	}
 
