@@ -27,6 +27,15 @@ public class Societe extends Client{
 		this.numeroDeTva = tva;
 	}
 	
+	public Societe(	String nom, String mail, String telephone, 
+		    Integer numeroAdresse, Integer codePostal, String rue, 
+		    String ville, String complementAdresse, String pays,String siret, String tva) {
+		super();
+		this.siret = siret;
+		this.numeroDeTva = tva;
+	}
+	
+
 	@Version
     private Long version;
 	

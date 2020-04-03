@@ -41,7 +41,7 @@ public abstract class Client {
 	@Column(name="adresse")
 	private Integer numeroAdresse;
 	
-	@Column(name="codepostal")
+	@Column(name="code_postal")
 	private Integer codePostal;
 	
 	@Column(name="rue", length = 150)

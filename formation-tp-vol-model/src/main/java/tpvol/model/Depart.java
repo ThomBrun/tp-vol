@@ -19,7 +19,6 @@ public class Depart {
 	private Long id;
 	@Temporal(TemporalType.DATE)
 	private Date dateDepart;
-	
 	@OneToOne
 	private Vol vols;
 	@ManyToOne
