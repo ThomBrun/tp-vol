@@ -14,7 +14,7 @@ public class Avion {
 	@GeneratedValue
 	private Long id;
 	private String modele;
-	@OneToMany(mappedBy = "vol")
+	@OneToMany(mappedBy = "avion")
 	private List<Vol> vols	 = new ArrayList<Vol>();
 	
 	public Avion() {
