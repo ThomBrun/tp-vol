@@ -94,10 +94,6 @@ public class Application {
 		return utilisateurDao;
 	}
 
-	public IClientDao getClientDao() {
-		return clientDao;
-	}
-
 	public ISocieteDao getSocieteDao() {
 		return societeDao;
 	}

@@ -34,10 +34,10 @@ public class Arrivee {
 	public void setDateArrivee(Date dateArrivee) {
 		this.dateArrivee = dateArrivee;
 	}
-	public Aeroport getAeroprt() {
+	public Aeroport getAeroport() {
 		return aeroport;
 	}
-	public void setAeroprt(Aeroport aeroprt) {
+	public void setAeroport(Aeroport aeroprt) {
 		this.aeroport = aeroprt;
 	}
 	public Vol getVols() {

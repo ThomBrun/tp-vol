@@ -38,7 +38,7 @@ public class Passager {
 	}
 
 	public Passager(String nom, String prenom, Date dateDeNaissance, String nationalite, String sexe,
-			String numeroPasseport, Date dateValiditePasseport, String typePieceIdentite, Boolean handicap) {
+			String numeroPasseport, Date dateValiditePasseport, String typePieceIdentite) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -48,7 +48,6 @@ public class Passager {
 		this.numeroPasseport = numeroPasseport;
 		this.dateValiditePasseport = dateValiditePasseport;
 		this.typePieceIdentite = typePieceIdentite;
-		this.handicap = handicap;
 	}
 
 	// getters and setters

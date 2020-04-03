@@ -26,6 +26,13 @@ public class Aeroport {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Aeroport(String nom) {
+		super();
+		this.nom = nom;
+	}
+
+
 
 	public String getNom() {
 		return nom;

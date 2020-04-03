@@ -9,10 +9,10 @@ import javax.persistence.Version;
 @DiscriminatorValue("soc")
 public class Societe extends Client{
 	
-	@Column(name="siret", length = 100, nullable = false)
+	@Column(name="siret", length = 100)
 	private String siret;
 	
-	@Column(name="TVA", length = 100, nullable = false)
+	@Column(name="TVA", length = 100)
 	private String numeroDeTva;
 	
 	//Generator

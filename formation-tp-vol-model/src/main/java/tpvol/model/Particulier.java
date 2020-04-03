@@ -9,7 +9,7 @@ import javax.persistence.Version;
 @DiscriminatorValue("part")
 public class Particulier extends Client{
 	
-	@Column(name="prenom", length = 100, nullable = false)
+	@Column(name="prenom", length = 100)
 	private String prenom;
 	
 	//Generator
@@ -18,6 +18,15 @@ public class Particulier extends Client{
 		super();
 	}
 	
+
+	public Particulier(String nom, String mail, String telephone, Integer numeroAdresse, Integer codePostal, String rue,
+			String ville, String complementAdresse, String pays, String prenom) {
+		super(nom, mail, telephone, numeroAdresse, codePostal, rue, ville, complementAdresse, pays);
+		this.prenom = prenom;
+	}
+
+
+
 	public Particulier(String prenom) {
 		super();
 		this.prenom = prenom;

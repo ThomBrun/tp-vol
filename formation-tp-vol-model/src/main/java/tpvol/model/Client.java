@@ -19,7 +19,7 @@ import javax.persistence.Version;
 
 @Entity // obligatoire
 @Table(name = "client") // optionnel 
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="type", discriminatorType = DiscriminatorType.STRING, length = 15) 
 public abstract class Client {
 	
@@ -41,7 +41,7 @@ public abstract class Client {
 	@Column(name="adresse")
 	private Integer numeroAdresse;
 	
-	@Column(name="code-postal")
+	@Column(name="codepostal")
 	private Integer codePostal;
 	
 	@Column(name="rue", length = 150)
@@ -71,19 +71,17 @@ public abstract class Client {
 		super();
 	}
 	
-	public Client(String nom, String type, String mail) {
+	public Client(String nom, String mail) {
 		super();
 		this.nom = nom;
-		//this.type = type;
 		this.mail = mail;
 	}
 	
-	public Client(String nom, String type, String mail, String telephone, 
+	public Client(String nom, String mail, String telephone, 
 		          Integer numeroAdresse, Integer codePostal, String rue, 
 		          String ville, String complementAdresse, String pays) {
 		super();
 		this.nom = nom;
-		//this.type = type;
 		this.mail = mail;
 		this.telephone = telephone;
 		this.numeroAdresse = numeroAdresse;
