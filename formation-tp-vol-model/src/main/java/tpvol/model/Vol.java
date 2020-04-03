@@ -18,13 +18,13 @@ public class Vol {
 	private Long id;
 	private String numeroDeVol;
 	private Boolean ouvert;
-	@ManyToMany(mappedBy = "lien_trajet_vol")
+	@ManyToMany(mappedBy = "vols")
 	private List<Trajet> trajets = new ArrayList<Trajet>();
 	@ManyToOne
-	@JoinColumn(name="compagnie_id")
+	@JoinColumn(name = "compagnie_id")
 	private Compagnie compagnie;
 	@ManyToOne
-	@JoinColumn(name="avion_id")
+	@JoinColumn(name = "avion_id")
 	private Avion avion;
 	@OneToOne
 	@JoinColumn(name = "dt_arrivee_id")
@@ -33,7 +33,6 @@ public class Vol {
 	@JoinColumn(name = "dt_depart_id")
 	private Depart depart;
 
-	
 	public Vol() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -94,7 +93,7 @@ public class Vol {
 	public void setDepart(Depart depart) {
 		this.depart = depart;
 	}
-	
+
 	public void addTrajet(Trajet trajet) {
 		this.trajets.add(trajet);
 	}
@@ -104,13 +103,5 @@ public class Vol {
 		return "Vol [numeroDeVol=" + numeroDeVol + ", ouvert=" + ouvert + ", compagnie=" + compagnie + ", avion="
 				+ avion + ", arrivee=" + arrivee + ", depart=" + depart + "]";
 	}
-	
 
-
-
-
-	
-	
-	
-	
 }

@@ -22,6 +22,10 @@ public class Application {
 	private final ITrajetDao trajetDao = new TrajetDaoJpa();
 
 	public static Application getInstance() {
+		if (instance == null) {
+			instance = new Application();
+		}
+
 		return instance;
 	}
 

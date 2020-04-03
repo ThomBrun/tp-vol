@@ -14,7 +14,7 @@ public class Compagnie {
 	@GeneratedValue
 	private Long id;
 	private String nom;
-	@OneToMany(mappedBy = "vol")
+	@OneToMany(mappedBy = "compagnie")
 	private List<Vol> vols	 = new ArrayList<Vol>();
 	
 	public Compagnie() {

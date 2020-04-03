@@ -20,7 +20,7 @@ public class Trajet {
 	@JoinTable(name="lien_trajet_vol", joinColumns = @JoinColumn(name="trajet_id"), inverseJoinColumns = @JoinColumn(name="vol_id"))
 	private List<Vol> vols = new ArrayList<Vol>();
 
-	@OneToOne(mappedBy = "trajet")
+	@OneToOne(mappedBy = "traj")
 	private Reservation res;
 
 	// generator
@@ -29,12 +29,8 @@ public class Trajet {
 		super();
 	}
 
-	public ArrayList<Vol> getVolsOrdonne() {
-		return volsOrdonne;
-	}
-
-	public void setVolsOrdonne(ArrayList<Vol> volsOrdonne) {
-		this.volsOrdonne = volsOrdonne;
+	public List<Vol> getVols() {
+		return vols;
 	}
 
 	public List<Vol> getvols() {
