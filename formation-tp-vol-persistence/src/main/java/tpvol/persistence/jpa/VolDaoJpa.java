@@ -7,14 +7,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import tpvol.Application;
-import tpvol.model.Paiement;
-import tpvol.persistence.IPaiementDao;
+import tpvol.model.Vol;
+import tpvol.persistence.IVolDao;
 
-public class PaiementDaoJpa implements IPaiementDao {
+public class VolDaoJpa implements IVolDao{
 
 	@Override
-	public List<Paiement> findAll() {
-		List<Paiement> paiements = null;
+	public List<Vol> findAll() {
+		List<Vol> vols = null;
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -22,8 +22,8 @@ public class PaiementDaoJpa implements IPaiementDao {
 			em = Application.getInstance().getEmf().createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			TypedQuery<Paiement> query = em.createQuery("from Paiement", Paiement.class);
-			paiements = query.getResultList();
+			TypedQuery<Vol> query = em.createQuery("from vol", Vol.class);
+			vols = query.getResultList();
 			tx.commit();
 		} catch (Exception e) {
 			if (tx != null && tx.isActive()) {
@@ -35,44 +35,19 @@ public class PaiementDaoJpa implements IPaiementDao {
 				em.close();
 			}
 		}
-		return paiements;
+		return vols;
 	}
 
 	@Override
-	public Paiement find(Long id) {
-		Paiement paiement = null;
+	public Vol find(Long id) {
+		Vol vol = null;
 		EntityManager em = null;
 		EntityTransaction tx = null;
 		try {
 			em = Application.getInstance().getEmf().createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			paiement = em.find(Paiement.class, id);
-			tx.commit();
-		} catch (Exception e) {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-			e.printStackTrace();
-		} finally {
-			if (em != null) {
-				em.close();
-			}
-		}
-
-		return paiement;
-	}
-
-	@Override
-	public Paiement save(Paiement obj) {
-		Paiement paiement = null;
-		EntityManager em = null;
-		EntityTransaction tx = null;
-		try {
-			em = Application.getInstance().getEmf().createEntityManager();
-			tx = em.getTransaction();
-			tx.begin();
-			paiement = em.merge(obj);
+			vol = em.find(Vol.class, id);
 			tx.commit();
 		} catch (Exception e) {
 			if (tx != null && tx.isActive()) {
@@ -85,12 +60,37 @@ public class PaiementDaoJpa implements IPaiementDao {
 			}
 		}
 
-		return paiement;
+		return vol;
+	}
+
+	@Override
+	public Vol save(Vol obj) {
+		Vol vol = null;
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		try {
+			em = Application.getInstance().getEmf().createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			vol = em.merge(obj);
+			tx.commit();
+		} catch (Exception e) {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+
+		return vol;
 	}
 
 
 	@Override
-	public void delete(Paiement obj) {
+	public void delete(Vol obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 		
@@ -113,5 +113,5 @@ public class PaiementDaoJpa implements IPaiementDao {
 			}
 		}
 	}
-}
 
+}

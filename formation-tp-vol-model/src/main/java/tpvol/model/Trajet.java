@@ -29,13 +29,11 @@ public class Trajet {
 		super();
 	}
 
-	public ArrayList<Vol> getVolsOrdonne() {
-		return volsOrdonne;
+	
+		public List<Vol> getVols() {
+		return vols;
 	}
 
-	public void setVolsOrdonne(ArrayList<Vol> volsOrdonne) {
-		this.volsOrdonne = volsOrdonne;
-	}
 
 	public List<Vol> getvols() {
 		return vols;

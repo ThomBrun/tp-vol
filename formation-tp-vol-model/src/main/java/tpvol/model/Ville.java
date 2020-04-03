@@ -24,8 +24,13 @@ public class Ville {
 		super();
 	}
 
-	
-	
+		
+	public Ville(String nom, String pays) {
+		super();
+		this.nom = nom;
+		this.pays = pays;
+	}
+
 	public String getNom() {
 		return nom;
 	}

@@ -1,13 +1,23 @@
-package tp.vol;
+package tpvol;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import sopra.formation.Application;
+import tpvol.persistence.IAeroportDao;
+import tpvol.persistence.IArriveeDao;
+import tpvol.persistence.IAvionDao;
+import tpvol.persistence.ICompagnieDao;
+import tpvol.persistence.IDepartDao;
 import tpvol.persistence.IPaiementDao;
+import tpvol.persistence.IParticulierDao;
 import tpvol.persistence.IPassagerDao;
 import tpvol.persistence.IReservationDao;
+import tpvol.persistence.ISocieteDao;
 import tpvol.persistence.ITrajetDao;
+import tpvol.persistence.IUtilisateurDao;
+import tpvol.persistence.IVilleDao;
+import tpvol.persistence.IVolDao;
 import tpvol.persistence.jpa.PaiementDaoJpa;
 import tpvol.persistence.jpa.PassagerDaoJpa;
 import tpvol.persistence.jpa.ReservationDaoJpa;
@@ -22,19 +32,16 @@ public class Application {
 	private final IPassagerDao passageDao = new PassagerDaoJpa();
 	private final IReservationDao reservationDao = new ReservationDaoJpa();
 	private final ITrajetDao trajetDao = new TrajetDaoJpa();
-	
-	private final IUtilisateurDao utilisateurDao = new UtilisateurDaoJpa();
-	private final IClientDao clientDao = new ClientDaoJpa();
-	private final ISocieteDao societeDao = new SocieteDaoJpa();
-	private final IParticulierDao particulierDao = new ParticulierDaoJpa();
-	
-	private final IVolDao volDao = new VolDaoJpa();
-	private final ICompagnieDao compagnieDao = new CompagnieDaoJpa();
-	private final IAvionDao avionDao = new AvionDaoJpa();
-	private final IDepartDao departDao = new DepartDaoJpa();
-	private final IArriveeDao arriveeDao = new ArriveeDaoJpa();
-	private final IAeroportDao aeroportDao = new AeroportDaoJpa();
-	private final IVilleDao villeDao = new VilleDaoJpa();
+//	private final IUtilisateurDao utilisateurDao = new UtilisateurDaoJpa();
+//	private final ISocieteDao societeDao = new SocieteDaoJpa();
+//	private final IParticulierDao particulierDao = new ParticulierDaoJpa();
+//	private final IVolDao volDao = new VolDaoJpa();
+//	private final ICompagnieDao compagnieDao = new CompagnieDaoJpa();
+//	private final IAvionDao avionDao = new AvionDaoJpa();
+//	private final IDepartDao departDao = new DepartDaoJpa();
+//	private final IArriveeDao arriveeDao = new ArriveeDaoJpa();
+//	private final IAeroportDao aeroportDao = new AeroportDaoJpa();
+//	private final IVilleDao villeDao = new VilleDaoJpa();
 	
 	private Application() {
 		
@@ -47,6 +54,8 @@ public class Application {
 
 		return instance;
 	}
+	
+
 
 	public static void setInstance(Application instance) {
 		Application.instance = instance;

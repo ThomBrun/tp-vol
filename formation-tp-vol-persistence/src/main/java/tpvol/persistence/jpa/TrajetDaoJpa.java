@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import tp.vol.Application;
+import tpvol.Application;
 import tpvol.model.Trajet;
 import tpvol.persistence.ITrajetDao;
 
